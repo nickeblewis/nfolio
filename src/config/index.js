@@ -9,7 +9,7 @@ module.exports = {
   fbAppID: '@nicklewis',
   type: 'website',
 
-  GRAPHQL_ENDPOINT: 'https://api.nfolio.com',
+  GRAPHQL_ENDPOINT: 'https://nfolio-api.herokuapp.com/',
   GRAPHQL_ENDPOINT_DEV: 'http://localhost:4000',
   siteUrl: 'https://www.nfolio.com',
   mediumPublicationUrl: 'https://medium.com/nfolio',

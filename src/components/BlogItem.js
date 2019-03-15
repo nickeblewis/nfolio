@@ -26,9 +26,7 @@ export default ({ data }) => {
   return (
     <div className="columns">
       <div className="column">
-        <a href={url}>
-          <Img fluid={data.image.fluid} />
-        </a>
+        <a href={url}>Test</a>
       </div>
       <div className="column ">
         <div className="content">
