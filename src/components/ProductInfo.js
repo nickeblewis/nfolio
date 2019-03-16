@@ -199,7 +199,10 @@ class ProductInfo extends React.Component {
                     <HTMLContent
                       content={product.shortDetails.childMarkdownRemark.html}
                     />
-                    <p>Printed on fine art paper</p>
+                    <p>
+                      Printed on Platinum Etching 285gsm fine-art paper with
+                      Lucia Pro pigment ink
+                    </p>
                     <p>All prices include sales taxes and free UK delivery.</p>
                     <ProductCode>Product Code: {product.sku}</ProductCode>
                   </AccordionItemBody>
