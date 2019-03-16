@@ -199,12 +199,9 @@ class ProductInfo extends React.Component {
                     <HTMLContent
                       content={product.shortDetails.childMarkdownRemark.html}
                     />
-                    <p>Color: {product.color}</p>
-                    <p>Made in India</p>
+                    <p>Printed on fine art paper</p>
                     <p>All prices include sales taxes and free UK delivery.</p>
-                    <ProductCode>
-                      Product Code: {product.sku}
-                    </ProductCode>
+                    <ProductCode>Product Code: {product.sku}</ProductCode>
                   </AccordionItemBody>
                 </AccordionItem>
                 <AccordionItem>

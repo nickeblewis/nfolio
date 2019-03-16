@@ -22,7 +22,7 @@ export default class NotFoundPage extends React.Component {
           You just hit a route that doesn&#39;t exist... the sadness.
         </p>
         <br />
-        <ProductsList title="We think you'll" products={products.edges} />
+        <ProductsList title="You may also like..." products={products.edges} />
       </div>
     );
   }
