@@ -53,7 +53,7 @@ export default class Product extends React.Component {
         />
         <div>
           <Container className="columns">
-            <div className="column is-two-fifths">
+            <div className="column is-half">
               <ProductGallery product={product} />
             </div>
             <div className="column section">
