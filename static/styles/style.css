@@ -479,10 +479,10 @@ p {
 }
 
 .image-gallery-image {
-  height: 800px;
+  height: 400px;
 }
 .image-gallery-slide img {
-  height: 800px;
+  height: 400px;
   object-fit: cover;
 }
 
