@@ -154,7 +154,7 @@ class ProductInfo extends React.Component {
     const { product, home } = this.props;
 
     const metaUrl = `${config.siteUrl}/product/${product.slug}`;
-    const metaTitle = `Checkout ${product.title} at SejalSuits`;
+    const metaTitle = `Checkout ${product.title} at Nfolio`;
     const metaImage = product.image
       ? product.image.sizes.src
       : `${config.url}${config.logo}`;
@@ -234,7 +234,7 @@ class ProductInfo extends React.Component {
                       <FacebookShareButton
                         url={metaUrl}
                         quote={metaTitle}
-                        hashtag="#sejalsuits"
+                        hashtag="#nfolio"
                       >
                         <i className="fab fa-facebook-square" />
                       </FacebookShareButton>
@@ -243,7 +243,12 @@ class ProductInfo extends React.Component {
                       <TwitterShareButton
                         url={metaUrl}
                         title={metaTitle}
-                        hashtags={['sejalsuits', 'punjabisuits']}
+                        hashtags={[
+                          'nfolio',
+                          'photography',
+                          'workshops',
+                          'prints',
+                        ]}
                       >
                         <i className="fab fa-twitter-square" />
                       </TwitterShareButton>

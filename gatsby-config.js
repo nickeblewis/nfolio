@@ -35,7 +35,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: '5kdxu849wo7r',
-        accessToken: 'e051716c3b7dba17d1b3cb09b415fb2b54e8e42d56ea40dac6f5c6e42739350a',
+        accessToken:
+          'e051716c3b7dba17d1b3cb09b415fb2b54e8e42d56ea40dac6f5c6e42739350a',
       },
     },
     {
@@ -70,7 +71,7 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'minimal-ui',
-        icon: './static/images/logo.png',
+        icon: './static/images/nfolio.png',
       },
     },
     `gatsby-plugin-offline`,
