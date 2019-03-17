@@ -53,7 +53,7 @@ const Footer = ({ home }) => (
         </div>
         <div className="column has-text-white">
           <Heading className="is-uppercase is-size-5">Subscribe</Heading>
-          <p>Receive special offers when you signup our mailing list</p>
+          <p>Receive updates by signing up to our mailing list</p>
           <SubscribeForm />
         </div>
         <div className="column has-text-white">
