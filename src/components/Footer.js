@@ -40,7 +40,7 @@ const Footer = ({ home }) => (
     <div className="section container is-hidden-mobile">
       <div className="columns is-multiline">
         <div className="column has-text-white">
-          <Heading className="is-uppercase is-size-5">Customer service</Heading>
+          <Heading className="is-uppercase is-size-5">Menu</Heading>
           <ul>
             {NavItems.map(item => (
               <li key={item.id}>
