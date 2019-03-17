@@ -57,7 +57,7 @@ const Footer = ({ home }) => (
           <SubscribeForm />
         </div>
         <div className="column has-text-white">
-          <Heading className="is-uppercase is-size-5">Connect</Heading>
+          <Heading className="is-uppercase is-size-5">Social Media</Heading>
           <SocialIcons data={home} inverted />
         </div>
       </div>
