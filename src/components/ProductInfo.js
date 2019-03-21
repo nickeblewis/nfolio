@@ -38,7 +38,7 @@ const cartQuery = gql`
 const Price = styled.div`
   color: ${config.primaryColor};
   font-size: 1.5rem;
-  margin-top: -2rem;
+
   span {
     color: #4a4a4a;
     font-size: 1rem;
@@ -151,7 +151,7 @@ class ProductInfo extends React.Component {
 
   render() {
     const { isVisible } = this.state;
-    const { product, home } = this.props;
+    const { product, home, prices } = this.props;
 
     const metaUrl = `${config.siteUrl}/product/${product.slug}`;
     const metaTitle = `Checkout ${product.title} at Nfolio`;
@@ -165,9 +165,22 @@ class ProductInfo extends React.Component {
         <Price className="has-text-weight-semibold has-text-centered">
           {formatCurrency(product.discountPrice)}{' '}
           {product.discountPrice < product.originalPrice && (
-            <span>{formatCurrency(product.originalPrice)}</span>
+            <span>{formatCurrency(prices[0].a4Price)}</span>
           )}
         </Price>
+        <Price className="has-text-weight-semibold has-text-centered">
+          {formatCurrency(product.discountPrice)}{' '}
+          {product.discountPrice < product.originalPrice && (
+            <span>{formatCurrency(prices[0].a3Price)}</span>
+          )}
+        </Price>
+        <Price className="has-text-weight-semibold has-text-centered">
+          {formatCurrency(product.discountPrice)}{' '}
+          {product.discountPrice < product.originalPrice && (
+            <span>{formatCurrency(prices[0].a2Price)}</span>
+          )}
+        </Price>
+
         <Spring
           native
           from={{ opacity: 0 }}
@@ -179,12 +192,26 @@ class ProductInfo extends React.Component {
                 {({ data }) => (
                   <ApolloConsumer>
                     {client => (
-                      <BuyBtn
-                        className="product-info-btn button is-dark is-large is-radiusless is-uppercase"
-                        onClick={() => this.handleAddToCart(client, data)}
-                      >
-                        Add to cart
-                      </BuyBtn>
+                      <div>
+                        <BuyBtn
+                          className="product-info-btn button is-dark is-large is-radiusless is-uppercase"
+                          onClick={() => this.handleAddToCart(client, data)}
+                        >
+                          Buy A4 £45
+                        </BuyBtn>
+                        <BuyBtn
+                          className="product-info-btn button is-dark is-large is-radiusless is-uppercase"
+                          onClick={() => this.handleAddToCart(client, data)}
+                        >
+                          Buy A3 £75
+                        </BuyBtn>
+                        <BuyBtn
+                          className="product-info-btn button is-dark is-large is-radiusless is-uppercase"
+                          onClick={() => this.handleAddToCart(client, data)}
+                        >
+                          Buy A2 £125
+                        </BuyBtn>
+                      </div>
                     )}
                   </ApolloConsumer>
                 )}
