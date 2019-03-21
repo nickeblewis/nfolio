@@ -40,7 +40,7 @@ const Container = styled(animated.div)`
 
 const Image = styled(Img)`
   object-fit: cover;
-  height: 540px;
+
   width: 100%;
 `;
 
