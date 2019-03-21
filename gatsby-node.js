@@ -86,6 +86,13 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
           }
         }
       }
+      allContentfulCategories {
+        edges {
+          node {
+            title
+          }
+        }
+      }
       allContentfulProduct(filter: { slug: { ne: null } }) {
         edges {
           node {
