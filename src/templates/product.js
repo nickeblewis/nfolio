@@ -33,6 +33,7 @@ export default class Product extends React.Component {
       data: {
         contentfulProduct: product,
         allContentfulProduct: products,
+        contentfulPrices: prices,
         contentfulHome: home,
       },
     } = this.props;
@@ -57,7 +58,7 @@ export default class Product extends React.Component {
               <ProductGallery product={product} />
             </div>
             <div className="column section">
-              <ProductInfo home={home} product={product} />
+              <ProductInfo home={home} product={product} prices={prices} />
             </div>
           </Container>
         </div>
@@ -124,6 +125,11 @@ export const productQuery = graphql`
           }
         }
       }
+    }
+    contenfulPrices {
+      a4Price
+      a3Price
+      a2Price
     }
     contentfulHome {
       productDeliveryInfo {
