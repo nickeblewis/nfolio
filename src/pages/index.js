@@ -1,21 +1,35 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import styled from 'styled-components';
 import { first } from 'underscore';
 
 import config from '../config/index';
 import Seo from '../components/Seo';
 import ProductsList from '../components/ProductsList';
+import CategoriesList from '../components/CategoriesList';
+
 import HomeAbout from '../components/HomeAbout';
 import ScrollButton from '../components/ScrollButton';
 
+const Container = styled.div`
+  &&& {
+    margin-top: 3rem;
+  }
+`;
+
 export default class IndexPage extends React.Component {
-  componentDidMount () {
-    ReactGA.pageview ('/');
+  componentDidMount() {
+    ReactGA.pageview('/');
   }
 
-  render () {
+  render() {
     const {
-      data: {allContentfulProduct: products, contentfulHome: home},
+      data: {
+        allContentfulProduct: products,
+        contentfulHome: home,
+        allContentfulCategories: categories,
+        contentfulPrices: prices,
+      },
     } = this.props;
 
     return (
@@ -25,7 +39,15 @@ export default class IndexPage extends React.Component {
           description="Nfolio The Photography Site"
           url={config.siteUrl}
         />
-        <ProductsList products={products.edges} />
+        <Container className="columns">
+          <div className="column is-one-fifth section">
+            <CategoriesList categories={categories.edges} />
+          </div>
+          <div className="column section">
+            <ProductsList products={products.edges} pricesdata={prices} />
+          </div>
+        </Container>
+
         <HomeAbout data={home} />
       </React.Fragment>
     );
@@ -35,8 +57,15 @@ export default class IndexPage extends React.Component {
 // filter: { status: { eq: "active" } }
 export const indexQuery = graphql`
   query Products {
+    allContentfulCategories {
+      edges {
+        node {
+          title
+        }
+      }
+    }
     allContentfulProduct(
-      filter: { slug: { ne: null }}
+      filter: { slug: { ne: null } }
       sort: { fields: [listingOrder], order: ASC }
     ) {
       edges {
@@ -55,6 +84,11 @@ export const indexQuery = graphql`
           }
         }
       }
+    }
+    contentfulPrices {
+      a4price
+      a3price
+      a2price
     }
     contentfulHome {
       homeSliderTitle
