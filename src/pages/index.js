@@ -44,7 +44,7 @@ export default class IndexPage extends React.Component {
             <CategoriesList categories={categories.edges} />
           </div>
           <div className="column section">
-            <ProductsList products={products.edges} pricesdata={prices} />
+            <ProductsList products={products.edges} prices={prices} />
           </div>
         </Container>
 
@@ -86,9 +86,9 @@ export const indexQuery = graphql`
       }
     }
     contentfulPrices {
-      a4price
-      a3price
-      a2price
+      a4Price
+      a3Price
+      a2Price
     }
     contentfulHome {
       homeSliderTitle

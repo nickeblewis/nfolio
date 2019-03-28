@@ -35,18 +35,6 @@ const cartQuery = gql`
   }
 `;
 
-const Price = styled.div`
-  color: ${config.primaryColor};
-  font-size: 1.5rem;
-
-  span {
-    color: #4a4a4a;
-    font-size: 1rem;
-    text-decoration: line-through;
-    font-weight: light;
-  }
-`;
-
 const BuyBtn = styled.button`
   width: 100%;
   margin-top: 3rem;
@@ -162,24 +150,6 @@ class ProductInfo extends React.Component {
     return (
       <React.Fragment>
         <Heading>{product.title}</Heading>
-        <Price className="has-text-weight-semibold has-text-centered">
-          {formatCurrency(product.discountPrice)}{' '}
-          {product.discountPrice < product.originalPrice && (
-            <span>{formatCurrency(prices[0].a4Price)}</span>
-          )}
-        </Price>
-        <Price className="has-text-weight-semibold has-text-centered">
-          {formatCurrency(product.discountPrice)}{' '}
-          {product.discountPrice < product.originalPrice && (
-            <span>{formatCurrency(prices[0].a3Price)}</span>
-          )}
-        </Price>
-        <Price className="has-text-weight-semibold has-text-centered">
-          {formatCurrency(product.discountPrice)}{' '}
-          {product.discountPrice < product.originalPrice && (
-            <span>{formatCurrency(prices[0].a2Price)}</span>
-          )}
-        </Price>
 
         <Spring
           native

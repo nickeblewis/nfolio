@@ -23,6 +23,7 @@ module.exports = {
         showSpinner: false,
       },
     },
+
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,

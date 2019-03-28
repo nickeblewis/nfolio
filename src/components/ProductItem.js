@@ -44,7 +44,7 @@ const Image = styled(Img)`
   width: 100%;
 `;
 
-const ProductItem = ({ item, styles }) => (
+const ProductItem = ({ item, styles, prices }) => (
   <Container className="column is-one-third" style={styles}>
     <div className="card">
       <div className="card-image">

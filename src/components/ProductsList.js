@@ -24,7 +24,7 @@ class ProductsList extends React.Component {
   }
 
   render() {
-    const { title, products } = this.props;
+    const { title, products, prices } = this.props;
     const { isOpen } = this.state;
     const keys = products.map(item => item.node.id);
     // console.log('products', products);
@@ -40,7 +40,12 @@ class ProductsList extends React.Component {
             keys={keys}
           >
             {products.map(({ node }) => styles => (
-              <ProductItem key={node.id} item={node} styles={styles} />
+              <ProductItem
+                key={node.id}
+                item={node}
+                styles={styles}
+                prices={prices}
+              />
             ))}
           </Trail>
         </div>

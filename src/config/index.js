@@ -26,4 +26,6 @@ module.exports = {
   secondaryColor: '#2876C4',
   logo: '/images/nfolio.png',
   homeBannerImage: '/images/home-bg-3.jpg',
+  projectId: 'uy1r8hbl',
+  dataset: 'production',
 };

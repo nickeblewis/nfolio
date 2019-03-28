@@ -126,7 +126,7 @@ export const productQuery = graphql`
         }
       }
     }
-    contenfulPrices {
+    contentfulPrices {
       a4Price
       a3Price
       a2Price
